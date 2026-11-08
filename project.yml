@@ -1,0 +1,28 @@
+
+name: BusinessHQVoice
+options:
+  bundleIdPrefix: com.workingbones
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+packages:
+  FluidAudio:
+    url: https://github.com/FluidInference/FluidAudio.git
+    from: 0.17.7
+targets:
+  BusinessHQVoice:
+    type: application
+    platform: iOS
+    deploymentTarget: '18.0'
+    sources:
+      - BusinessHQVoice
+    dependencies:
+      - package: FluidAudio
+        product: FluidAudio
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.workingbones.hqvoicelab
+        TARGETED_DEVICE_FAMILY: '1'
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        CODE_SIGNING_ALLOWED: NO
